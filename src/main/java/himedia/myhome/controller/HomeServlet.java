@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
+@WebServlet(name = "Home", urlPatterns = "/")
 public class HomeServlet extends BaseServlet {
 
 	@Override
