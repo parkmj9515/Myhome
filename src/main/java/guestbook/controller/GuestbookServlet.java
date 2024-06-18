@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class GuestbookServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().append("Guestbook Servlet");
+        resp.getWriter().append("GuestbookServlet");
 
         String actionName = req.getParameter("a");
         if ("form".equals(actionName)) {

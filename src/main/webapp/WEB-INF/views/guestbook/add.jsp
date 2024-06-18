@@ -1,5 +1,5 @@
 <%@page import="guestbook.VO.GuestVo"%>
-
+<%@page import="guestbook.VO.*"%>
 <%@page import="guestbook.dao.GuestbookOracle"%>
 <%@page import="guestbook.dao.GuestbookDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,25 +7,24 @@
 <%
 
 ServletContext servletContext = getServletContext();
-
 String dbuser = servletContext.getInitParameter("dbuser");
 String dbpass = servletContext.getInitParameter("dbpass");
 
 
 	String name = request.getParameter("name");
-	String pass = request.getParameter("password");
+	String password = request.getParameter("password");
 	String content = request.getParameter("content");
 	
 	
 	
-	GuestVo vo = new GuestVo(name, pass, content);
+	GuestVo vo = new GuestVo(name, password, content);
 	GuestbookDao dao = new GuestbookOracle(dbuser, dbpass);
 	
 
 	boolean success = dao.insert(vo);
 	
 	if (success)
-		response.sendRedirect(request.getContextPath() + "/guestbook/list.jsp");
+		response.sendRedirect(request.getContextPath());
 	else {
 		%>
 		<h1>Error</h1>

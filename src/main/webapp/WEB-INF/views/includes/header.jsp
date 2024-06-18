@@ -7,12 +7,13 @@ UserVo authUser = (UserVo) session.getAttribute("authUser");
 %>
 <div id="header">
 	<h1>My Homepage</h1>
+	<p> authUser: ${authUser } </p>
 	<%
 	if (authUser != null) { // 로그인 함
 	%>
 	<ul>
-		<li><%=authUser.getName()%>님 환영합니다</li>
 		<li><a href="<%=request.getContextPath()%>/users?a=logout">로그아웃</a>
+		<li><!-- %=authUser.getName()%-->${sessionScope.authUser.name }님 환영합니다</li>
 			<!-- 로그인한 사용자 --> <!-- 웰컴 메시지, 로그아웃 링크 -->
 	</ul>
 	<%
