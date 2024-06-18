@@ -16,7 +16,7 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <title>방명록</title>
 </head>
 <body>
-	<form action="add.jsp" method="post">
+	<form action="../add.jsp" method="post">
 	<table border=1 width=500>
 		<tr>
 			<td>이름</td>
@@ -53,9 +53,10 @@ for (GuestVo node: lst) {
 		<tr>
 			<td><%= node.getNo() %></td>
 			<td><%= node.getName() %></td>
+			<td><%= node.getPassword() %></td>
 			<td><%= node.getRegDate() %></td>
 			
-			<td><a href="deleteform.jsp">삭제</a></td>
+			<td><a href="delete.jsp<%=node.getNo() %>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan=4><%= node.getContent() %></td>

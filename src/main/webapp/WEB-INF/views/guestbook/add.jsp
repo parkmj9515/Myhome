@@ -24,7 +24,7 @@ String dbpass = servletContext.getInitParameter("dbpass");
 	boolean success = dao.insert(vo);
 	
 	if (success)
-		response.sendRedirect(request.getContextPath());
+		response.sendRedirect(request.getContextPath()+"list.jsp");
 	else {
 		%>
 		<h1>Error</h1>
